@@ -1,0 +1,5 @@
+spring:
+  jpa:
+    show-sql: true # DDL 출력
+    hibernate:
+      ddl-auto: update
