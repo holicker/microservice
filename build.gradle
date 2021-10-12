@@ -21,12 +21,15 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.mapstruct:mapstruct:1.4.1.Final'
 	implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 	implementation "org.projectlombok:lombok:1.18.16"
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.5.5'
 	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.5.2'
-	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.1.4'
+	implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.5.2'
+	implementation 'org.springframework.cloud:spring-cloud-starter:3.0.4'
+	implementation 'org.springframework.cloud:spring-cloud-config-client:3.0.4'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.4'
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
