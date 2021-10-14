@@ -4,7 +4,7 @@ server:
 spring.cloud.config.server:
   encrypt.enabled: false
   git:
-    uri: https://github.com/holicker/config-repository
+    uri: https://github.com/holicker/microservice
     searchPaths: config-repository
 
 management.endpoints.web.exposure.include: "*"
