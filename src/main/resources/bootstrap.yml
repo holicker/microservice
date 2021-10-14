@@ -16,7 +16,6 @@ spring:
       maxAttemps: 20
     uri: http://${app.config-server}:8888
 
-
 spring.jpa.hibernate.ddl-auto: update
 
 ---
