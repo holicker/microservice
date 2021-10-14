@@ -19,8 +19,6 @@ services:
   config-server:
     build: config-server
     mem_limit: 350m
-    ports:
-      - "8888:8888"
 
   gateway:
     build: gateway
