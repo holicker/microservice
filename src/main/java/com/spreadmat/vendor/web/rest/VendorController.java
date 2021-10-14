@@ -1,6 +1,5 @@
 package com.spreadmat.vendor.web.rest;
 
-import com.spreadmat.vendor.config.CustomConfig;
 import com.spreadmat.vendor.domain.Merchandise;
 import com.spreadmat.vendor.service.VendorService;
 import com.spreadmat.vendor.web.rest.dto.MerchandiseDTO;
