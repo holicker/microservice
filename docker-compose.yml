@@ -1,0 +1,48 @@
+version: '2.1'
+
+services:
+  vendor:
+    build: vendor
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  eureka:
+    build: eureka
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    mem_limit: 350m
+
+  config-server:
+    build: config-server
+    mem_limit: 350m
+    ports:
+      - "8888:8888"
+
+  gateway:
+    build: gateway
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080:8080"
+
+
+  mysql:
+    image: mysql:5.7
+    mem_limit: 350m
+    ports:
+      - "3307:3307"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpwd
+      - MYSQL_DATABASE=spreadmat
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pwd
+    healthcheck:
+      test: "/usr/bin/mysql --user=user --password=pwd --execute \"SHOW DATABASES;\""
+      interval: 10s
+      timeout: 5s
+      retries: 10
