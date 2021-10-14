@@ -11,3 +11,18 @@ eureka:
 
 management.endpoint.health.show-details: "ALWAYS"
 management.endpoints.web.exposure.include: "*"
+
+spring.cloud.stream.kafka.binder:
+  brokers: 127.0.0.1
+  defaultBrokerPort: 9092
+
+spring.zipkin.sender.type: rabbit
+spring.sleuth.sampler.probability: 1.0
+
+---
+
+spring.profiles: docker
+
+spring.cloud.stream.defaultBinder: kafka
+spring.cloud.stream.kafka.binder.brokers: kafka
+spring.kafka.bootstrap-servers: kafka:9092
